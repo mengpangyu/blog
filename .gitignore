@@ -1,2 +1,3 @@
 # gitignore 常见配置
 node_modules/
+docs/.vitepress/cache/*
