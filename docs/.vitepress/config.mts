@@ -14,7 +14,7 @@ export default defineConfig({
       { text: "技术", link: "/technology" },
       { text: "项目", link: "/project" },
       { text: "面经", link: "/interview/base/js" },
-      { text: "资源", link: "/resource" },
+      { text: "资源", link: "/resource/todo" },
       { text: "关于我", link: "/project" },
     ],
 
