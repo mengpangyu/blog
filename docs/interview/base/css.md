@@ -308,3 +308,19 @@ box-sizing 属性：用于规定元素的宽高计算方法
    > 实际宽度 = width + padding + border
 2. content-box（默认）：width 指定的是 content 实际宽度
    > 实际宽度 = width
+
+## Flex 怎么用，常用属性有哪些
+
+1. 是什么：弹性布局，一种 CSS 布局形式
+2. 常用属性
+   - flex-direction：主轴方向
+   - justify-content：主轴对齐方式
+   - align-items：交叉轴对齐方式
+   - flex-warp：是否换行
+   - flex-grow：放大比例
+   - flex-shrink：缩小比例
+   - flex-basis：分配多余空间之前，占据的主轴空间
+   - flex：前三个属性的简写，作用为占据剩余空间，撑满父容器
+   - align-self：自我元素的对齐方式
+
+
