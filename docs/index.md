@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "CannedOrange"
-  text: "橘子装进罐头需要几步?"
-  tagline: 打怪升级日志
+  name: "PangYu"
+  text: "的个人博客"
+  tagline: 胡写乱画艺术家
   actions:
     - theme: brand
       text: 快速开始
@@ -22,4 +22,3 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-

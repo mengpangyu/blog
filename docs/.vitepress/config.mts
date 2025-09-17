@@ -11,8 +11,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "首页", link: "/" },
-      { text: "技术", link: "/technology" },
-      { text: "项目", link: "/project" },
+      { text: "技术", link: "/technology/frontEnd" },
+      { text: "项目", link: "/project/mi" },
       { text: "面经", link: "/interview/base/js" },
       { text: "资源", link: "/resource/todo" },
       { text: "关于我", link: "/project" },
