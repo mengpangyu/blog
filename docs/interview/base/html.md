@@ -47,42 +47,42 @@
 ```js
 function delegate(element, eventType, selector, fn) {
   element.addEventListener(eventType, (e) => {
-    let el = e.target;
+    let el = e.target
     while (!el.matches(selector)) {
       if (element === el) {
-        el = null;
-        break;
+        el = null
+        break
       }
-      el = el.parentNode;
-      el && fn.call(el, e, el);
+      el = el.parentNode
+      el && fn.call(el, e, el)
     }
-  });
-  return element;
+  })
+  return element
 }
 ```
 
 ## 用 Mouse 事件写一个可拖拽的 div
 
 ```js
-let dragging = false;
-let position = null;
-el.addEventListener("mousedown", function (e) {
-  dragging = true;
-  position = [e.clientX, e.clientY];
-});
-el.addEventListener("mousemove", function (e) {
-  if (dragging === false) return;
-  const x = e.clientX;
-  const y = e.clientY;
-  const deltaX = x - position[0];
-  const deltaY = y - position[1];
-  const left = parentInt(el.style.left || 0);
-  const top = parentInt(el.style.top || 0);
-  el.style.left = left + deltaX + "px";
-  el.style.top = top + deltaY + "px";
-  position = [x, y];
-});
-el.addEventListener("mouseup", function () {
-  dragging = false;
-});
+let dragging = false
+let position = null
+el.addEventListener('mousedown', function (e) {
+  dragging = true
+  position = [e.clientX, e.clientY]
+})
+el.addEventListener('mousemove', function (e) {
+  if (dragging === false) return
+  const x = e.clientX
+  const y = e.clientY
+  const deltaX = x - position[0]
+  const deltaY = y - position[1]
+  const left = parentInt(el.style.left || 0)
+  const top = parentInt(el.style.top || 0)
+  el.style.left = left + deltaX + 'px'
+  el.style.top = top + deltaY + 'px'
+  position = [x, y]
+})
+el.addEventListener('mouseup', function () {
+  dragging = false
+})
 ```

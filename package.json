@@ -2,21 +2,45 @@
   "name": "blog-workspace",
   "private": true,
   "packageManager": "pnpm@10.23.0",
+  "type": "module",
   "scripts": {
+    "prepare": "husky",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "docs:dev": "pnpm -C docs docs:dev",
     "docs:build": "pnpm -C docs docs:build",
     "docs:preview": "pnpm -C docs docs:preview",
-
     "react:dev": "pnpm --filter @apps/react dev",
     "react:build": "pnpm --filter @apps/react build",
     "react:preview": "pnpm --filter @apps/react preview",
-
     "vue:dev": "pnpm --filter @apps/vue dev",
     "vue:build": "pnpm --filter @apps/vue build",
     "vue:preview": "pnpm --filter @apps/vue preview",
-
     "dev": "pnpm -r --parallel dev",
     "build": "pnpm -r build",
-    "preview": "pnpm -r --parallel preview"
+    "preview": "pnpm -r --parallel preview",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "lint-staged": {
+    "**/*.{js,cjs,mjs,ts,tsx,mts,cts,vue,css,scss,md,json,yml,yaml}": [
+      "prettier --write"
+    ],
+    "**/*.{js,cjs,mjs,ts,tsx,mts,cts,vue}": [
+      "eslint --fix"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.4.2",
+    "@commitlint/config-conventional": "^20.4.2",
+    "@eslint/js": "^9.39.3",
+    "eslint": "^9.39.3",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.8.1",
+    "typescript-eslint": "^8.56.1"
   }
 }

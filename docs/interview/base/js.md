@@ -21,16 +21,16 @@
 
 ```js
 function debounce(fn, delay) {
-  let timer;
+  let timer
   return function (...args) {
-    const that = this;
+    const that = this
     if (timer) {
-      clearTimeout(timer);
+      clearTimeout(timer)
     }
     timer = setTimeout(() => {
-      fn.apply(that, args);
-    }, delay);
-  };
+      fn.apply(that, args)
+    }, delay)
+  }
 }
 ```
 
@@ -38,31 +38,31 @@ function debounce(fn, delay) {
 
 ```js
 function throttle(fn, delay) {
-  let timer;
+  let timer
   return function (...args) {
-    const that = this;
+    const that = this
     if (timer) {
-      return;
+      return
     }
     timer = setTimeout(() => {
-      fn.apply(that, args);
-      timer = null;
-    });
-  };
+      fn.apply(that, args)
+      timer = null
+    })
+  }
 }
 ```
 
 ## 手写 AJAX
 
 ```js
-const ajax = new XMLHttpRequest();
-request.open("GET", "/a/b/c?name=ff", true);
+const ajax = new XMLHttpRequest()
+request.open('GET', '/a/b/c?name=ff', true)
 request.onreadystatechange = () => {
   if (request.readyState === 4 && request.status === 200) {
-    console.log(request.responseText);
+    console.log(request.responseText)
   }
-};
-request.send();
+}
+request.send()
 ```
 
 ## This 指向
@@ -74,11 +74,11 @@ request.send();
 ```js
 const obj = {
   a: function () {
-    console.log(this);
+    console.log(this)
   },
-};
-obj.a(); // obj  a.call(obj)
-a(); // window a.call(undefined)
+}
+obj.a() // obj  a.call(obj)
+a() // window a.call(undefined)
 ```
 
 ## 闭包是什么
@@ -102,13 +102,13 @@ a(); // window a.call(undefined)
 立即执行函数会存储 i 的变量
 
 ```js
-var liList = ul.getElementsByTagName("li");
+var liList = ul.getElementsByTagName('li')
 for (var i = 0; i < 6; i++) {
   !(function (ii) {
     liList[ii].onclick = function () {
-      alert(ii); // 0、1、2、3、4、5
-    };
-  })(i);
+      alert(ii) // 0、1、2、3、4、5
+    }
+  })(i)
 }
 ```
 
@@ -124,35 +124,35 @@ for (var i = 0; i < 6; i++) {
 
 ```js
 function jsonp(setting) {
-  setting.data = setting.data || {};
-  setting.key = setting.key || "callback";
-  setting.callback = setting.callback || function () {};
-  setting.data[setting.key] = "__onGetData__";
+  setting.data = setting.data || {}
+  setting.key = setting.key || 'callback'
+  setting.callback = setting.callback || function () {}
+  setting.data[setting.key] = '__onGetData__'
   window.__onGetData__ = function (data) {
-    setting.callback(data);
-  };
-
-  const script = document.createElement("script");
-  const query = [];
-  for (let key in setting.data) {
-    query.push(`${key}=${encodeURIComponent(setting.data[key])}`);
+    setting.callback(data)
   }
-  script.src = setting.url + "?" + query.join("&");
-  document.head.appendChild(script);
-  document.head.removeChild(script);
+
+  const script = document.createElement('script')
+  const query = []
+  for (let key in setting.data) {
+    query.push(`${key}=${encodeURIComponent(setting.data[key])}`)
+  }
+  script.src = setting.url + '?' + query.join('&')
+  document.head.appendChild(script)
+  document.head.removeChild(script)
 }
 
 jsonp({
-  url: "http://photo.sina.cn/aj/index",
-  key: "jsonpcallback",
+  url: 'http://photo.sina.cn/aj/index',
+  key: 'jsonpcallback',
   data: {
     page: 1,
-    cate: "recommend",
+    cate: 'recommend',
   },
   callback: function (ret) {
-    console.log(ret);
+    console.log(ret)
   },
-});
+})
 ```
 
 ### CORS
@@ -196,8 +196,8 @@ jsonp({
 
 ```js
 String.prototype.trim = function () {
-  return this.replace(/^\s+|\s+$/g, "");
-};
+  return this.replace(/^\s+|\s+$/g, '')
+}
 ```
 
 ## 如何实现继承
@@ -206,27 +206,27 @@ String.prototype.trim = function () {
 
 ```js
 function Animal() {
-  this.color = color;
+  this.color = color
 }
-Animal.prototype.move = function () {};
+Animal.prototype.move = function () {}
 function Dog(color, name) {
-  Animal.call(this, color);
-  this.name = name;
+  Animal.call(this, color)
+  this.name = name
 }
 function temp() {}
-temp.prototype = Animal.prototype;
-Dog.prototype = new temp();
-Dog.prototype.constructor = Dog;
+temp.prototype = Animal.prototype
+Dog.prototype = new temp()
+Dog.prototype.constructor = Dog
 Dog.prototype.say = function () {
-  console.log("哈哈");
-};
-const dog = new Dog("黄色", "阿黄");
+  console.log('哈哈')
+}
+const dog = new Dog('黄色', '阿黄')
 ```
 
 :::warning 注意
 
 ```js
-Dog.prototype.constructor = Dog; // 这句代码很重要
+Dog.prototype.constructor = Dog // 这句代码很重要
 ```
 
 1. constructor 属性的默认行为：默认情况下，每个函数都有一个 prototype 属性，这个 prototype 对象自动获得一个 constructor 属性，指回这个函数本身
@@ -239,18 +239,18 @@ Dog.prototype.constructor = Dog; // 这句代码很重要
 ```js
 class Animal {
   constructor(props) {
-    this.color = props.color;
+    this.color = props.color
   }
-  move = () => {};
+  move = () => {}
 }
 class Dog extends Animal {
   constructor(props) {
-    super(color);
-    this.name = props.name;
+    super(color)
+    this.name = props.name
   }
   say = () => {
-    console.log("哈哈");
-  };
+    console.log('哈哈')
+  }
 }
 ```
 
@@ -259,7 +259,7 @@ class Dog extends Animal {
 1. set
 
 ```js
-new Set([1, 2, 3, 4, 5, 5, 5]);
+new Set([1, 2, 3, 4, 5, 5, 5])
 ```
 
 2. 两层 for 循环
@@ -269,12 +269,12 @@ function unique(arr) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[i] === arr[j]) {
-        arr.splice(j, 1);
-        j--;
+        arr.splice(j, 1)
+        j--
       }
     }
   }
-  return arr;
+  return arr
 }
 ```
 
@@ -283,15 +283,15 @@ function unique(arr) {
 ```js
 function unique(arr) {
   if (!Array.isArray(arr)) {
-    throw new Error("type error");
+    throw new Error('type error')
   }
-  let tempArr = [];
+  let tempArr = []
   for (let i = 0; i < arr.length; i++) {
     if (tempArr.indexOf(arr[i]) < 0) {
-      tempArr.push(arr[i]);
+      tempArr.push(arr[i])
     }
   }
-  return tempArr;
+  return tempArr
 }
 ```
 
@@ -299,14 +299,14 @@ function unique(arr) {
 
 ```js
 function unique(arr) {
-  arr = arr.sort();
-  let array = [arr[0]];
+  arr = arr.sort()
+  let array = [arr[0]]
   for (let i = 1; i < arr.length; i++) {
     if (arr[i] !== arr[i] - 1) {
-      array.push(arr[i]);
+      array.push(arr[i])
     }
   }
-  return array;
+  return array
 }
 ```
 
@@ -314,10 +314,10 @@ function unique(arr) {
 
 ```js
 function unique(arr) {
-  const tempArr = [];
+  const tempArr = []
   for (let i = 0; i < arr.length; i++) {
     if (!tempArr.includes(arr[i])) {
-      tempArr.push(arr[i]);
+      tempArr.push(arr[i])
     }
   }
 }

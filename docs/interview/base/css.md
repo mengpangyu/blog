@@ -289,7 +289,7 @@
 
 ```css
 .clearfix:after {
-  content: "";
+  content: '';
   display: block;
   clear: both;
 }
@@ -322,5 +322,3 @@ box-sizing 属性：用于规定元素的宽高计算方法
    - flex-basis：分配多余空间之前，占据的主轴空间
    - flex：前三个属性的简写，作用为占据剩余空间，撑满父容器
    - align-self：自我元素的对齐方式
-
-
