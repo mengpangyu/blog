@@ -1,10 +1,22 @@
 {
+  "name": "blog-workspace",
+  "private": true,
+  "packageManager": "pnpm@10.23.0",
   "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
-  },
-  "devDependencies": {
-    "vitepress": "^1.3.1"
+    "docs:dev": "pnpm -C docs docs:dev",
+    "docs:build": "pnpm -C docs docs:build",
+    "docs:preview": "pnpm -C docs docs:preview",
+
+    "react:dev": "pnpm --filter @apps/react dev",
+    "react:build": "pnpm --filter @apps/react build",
+    "react:preview": "pnpm --filter @apps/react preview",
+
+    "vue:dev": "pnpm --filter @apps/vue dev",
+    "vue:build": "pnpm --filter @apps/vue build",
+    "vue:preview": "pnpm --filter @apps/vue preview",
+
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "preview": "pnpm -r --parallel preview"
   }
 }

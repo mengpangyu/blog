@@ -2,4 +2,12 @@
 node_modules/
 .idea
 .vscode
+
+# vitepress
 docs/.vitepress/cache/
+docs/.vitepress/dist/
+
+# monorepo build artifacts
+apps/**/dist/
+apps/**/dist-ssr/
+apps/**/coverage/

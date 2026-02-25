@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "PangYu"
+  name: "ShanRen"
   text: "的个人博客"
   tagline: 胡写乱画艺术家
   actions:
