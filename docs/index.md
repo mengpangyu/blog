@@ -3,22 +3,22 @@
 layout: home
 
 hero:
-  name: 'ShanRen'
+  name: '山仞'
   text: '的个人博客'
-  tagline: 胡写乱画艺术家
+  tagline: 技术、思考与创作分享
   actions:
     - theme: brand
-      text: 快速开始
-      link: /markdown-examples
+      text: 前端学习
+      link: /fe/
     - theme: alt
-      text: 资源目录
-      link: /api-examples
+      text: 面经目录
+      link: /interview/base/js
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 技术笔记
+    details: 记录前端开发、算法、工程化等技术内容的学习与实践体会
+  - title: 创意与随想
+    details: 分享生活灵感、设计想法及个人成长过程中的所思所感
+  - title: 开源应用实验
+    details: 各类可运行的小项目，助力理解和验证知识点
 ---

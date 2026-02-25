@@ -10,15 +10,44 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: '首页', link: '/' },
-      { text: '技术', link: '/technology/frontEnd' },
-      { text: '项目', link: '/project/mi' },
+      { text: '前端', link: '/fe/' },
+      { text: '后端', link: '/be/' },
+      { text: 'AI', link: '/ai/' },
       { text: '面经', link: '/interview/base/js' },
+      { text: '项目', link: '/project/mi' },
       { text: '资源', link: '/resource/todo' },
-      { text: '关于我', link: '/project' },
     ],
 
     sidebar: {
+      '/fe/': [
+        {
+          text: '前端',
+          collapsed: false,
+          items: [
+            { text: '概览', link: '/fe/' },
+            { text: '语言与基础', link: '/fe/fundamentals/' },
+            { text: '浏览器与运行时', link: '/fe/browser/' },
+            { text: '框架与应用架构', link: '/fe/framework/' },
+            { text: '工程化', link: '/fe/engineering/' },
+            { text: '性能与稳定性', link: '/fe/performance/' },
+            { text: '跨端/客户端', link: '/fe/cross-platform/' },
+          ],
+        },
+      ],
+      '/be/': [
+        {
+          text: '后端',
+          collapsed: false,
+          items: [{ text: '概览', link: '/be/' }],
+        },
+      ],
+      '/ai/': [
+        {
+          text: 'AI',
+          collapsed: false,
+          items: [{ text: '概览', link: '/ai/' }],
+        },
+      ],
       '/interview': [
         {
           text: '基础',
