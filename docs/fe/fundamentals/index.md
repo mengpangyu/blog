@@ -1,10 +1,16 @@
 # 语言与基础
 
-- JS/TS 基础能力沉淀：语法、类型、异步、模块、数据结构与常用手写
-- 目标：能写出可维护代码，并能解释关键设计取舍
+- 目标：打牢 HTML/CSS/JS/TS 基础，形成可复用的知识卡片与实践总结
 
-## 推荐路径
+## 导航
 
-- JavaScript：语法/原型/作用域/异步/事件循环
-- TypeScript：类型系统/泛型/类型体操/工程配置
-- 编程基础：数据结构与算法（偏工程常用）
+- [HTML](/fe/fundamentals/html/)
+- [CSS](/fe/fundamentals/css/)
+- [JavaScript](/fe/fundamentals/js/)
+- TypeScript（待补）
+
+## 建议学习顺序
+
+- HTML：语义化 + 表单 + 可访问性
+- CSS：布局体系（BFC/Flex/Grid）+ 层叠上下文
+- JS：类型/作用域/原型/异步/模块

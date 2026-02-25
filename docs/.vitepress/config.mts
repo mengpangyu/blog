@@ -23,15 +23,85 @@ export default defineConfig({
         {
           text: '前端',
           collapsed: false,
+          items: [{ text: '概览', link: '/fe/' }],
+        },
+        {
+          text: '语言与基础',
+          collapsed: false,
           items: [
-            { text: '概览', link: '/fe/' },
-            { text: '语言与基础', link: '/fe/fundamentals/' },
-            { text: '浏览器与运行时', link: '/fe/browser/' },
-            { text: '框架与应用架构', link: '/fe/framework/' },
-            { text: '工程化', link: '/fe/engineering/' },
-            { text: '性能与稳定性', link: '/fe/performance/' },
-            { text: '跨端/客户端', link: '/fe/cross-platform/' },
+            { text: '总览', link: '/fe/fundamentals/' },
+            {
+              text: 'JavaScript',
+              collapsed: true,
+              items: [
+                { text: 'Types', link: '/fe/fundamentals/js/types' },
+                { text: 'Scope & Closure', link: '/fe/fundamentals/js/scope-closure' },
+                { text: 'Prototype', link: '/fe/fundamentals/js/prototype' },
+                { text: 'Async', link: '/fe/fundamentals/js/async' },
+                { text: 'Modules', link: '/fe/fundamentals/js/modules' },
+                { text: 'Patterns', link: '/fe/fundamentals/js/patterns' },
+                {
+                  text: 'Handwritten',
+                  collapsed: true,
+                  items: [
+                    {
+                      text: 'Debounce/Throttle',
+                      link: '/fe/fundamentals/js/handwritten/debounce-throttle',
+                    },
+                    { text: 'Promise', link: '/fe/fundamentals/js/handwritten/promise' },
+                  ],
+                },
+              ],
+            },
+            {
+              text: 'HTML',
+              collapsed: true,
+              items: [
+                { text: 'Semantics', link: '/fe/fundamentals/html/semantics' },
+                { text: 'Forms', link: '/fe/fundamentals/html/forms' },
+                { text: 'Accessibility', link: '/fe/fundamentals/html/accessibility' },
+                { text: 'Canvas vs SVG', link: '/fe/fundamentals/html/canvas-svg' },
+                { text: 'Performance', link: '/fe/fundamentals/html/performance' },
+              ],
+            },
+            {
+              text: 'CSS',
+              collapsed: true,
+              items: [
+                { text: 'Layout', link: '/fe/fundamentals/css/layout' },
+                { text: 'BFC', link: '/fe/fundamentals/css/bfc' },
+                { text: 'Flex / Grid', link: '/fe/fundamentals/css/flex-grid' },
+                { text: 'Stacking Context', link: '/fe/fundamentals/css/stacking-context' },
+                { text: 'Responsive', link: '/fe/fundamentals/css/responsive' },
+                { text: 'Animation', link: '/fe/fundamentals/css/animation' },
+              ],
+            },
           ],
+        },
+        {
+          text: '浏览器与运行时',
+          collapsed: false,
+          items: [{ text: '总览', link: '/fe/browser/' }],
+        },
+        {
+          text: '框架与应用架构',
+          collapsed: false,
+          items: [{ text: '总览', link: '/fe/framework/' }],
+        },
+        {
+          text: '工程化',
+          collapsed: false,
+          items: [{ text: '总览', link: '/fe/engineering/' }],
+        },
+        {
+          text: '性能与稳定性',
+          collapsed: false,
+          items: [{ text: '总览', link: '/fe/performance/' }],
+        },
+        {
+          text: '跨端/客户端',
+          collapsed: false,
+          items: [{ text: '总览', link: '/fe/cross-platform/' }],
         },
       ],
       '/be/': [
