@@ -10,6 +10,13 @@ export default defineConfig({
   description: '逆水行舟，不进则退',
   markdown: {
     lineNumbers: true,
+    container: {
+      tipLabel: '提示',
+      warningLabel: '警告',
+      dangerLabel: '危险',
+      infoLabel: '信息',
+      detailsLabel: '详细信息',
+    },
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
