@@ -7,6 +7,7 @@ const docsRoot = path.resolve(__dirname, '..')
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Canned',
+  base: '/blog/',
   description: '逆水行舟，不进则退',
   markdown: {
     lineNumbers: true,
