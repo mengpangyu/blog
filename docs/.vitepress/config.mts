@@ -22,21 +22,15 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: '前端', link: '/fe/' },
-      { text: '后端', link: '/be/' },
+      { text: '前端', link: '/frontend/' },
       { text: 'AI', link: '/ai/' },
       { text: '面经', link: '/interview/' },
-      { text: '项目', link: '/project/' },
-      { text: '资源', link: '/resource/' },
     ],
 
     sidebar: {
-      '/fe/': buildSectionSidebar({ docsRoot, section: 'fe', base: '/fe/' }),
-      '/be/': buildSectionSidebar({ docsRoot, section: 'be', base: '/be/' }),
+      '/frontend/': buildSectionSidebar({ docsRoot, section: 'frontend', base: '/frontend/' }),
       '/ai/': buildSectionSidebar({ docsRoot, section: 'ai', base: '/ai/' }),
       '/interview/': buildSectionSidebar({ docsRoot, section: 'interview', base: '/interview/' }),
-      '/project/': buildSectionSidebar({ docsRoot, section: 'project', base: '/project/' }),
-      '/resource/': buildSectionSidebar({ docsRoot, section: 'resource', base: '/resource/' }),
     },
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }],
