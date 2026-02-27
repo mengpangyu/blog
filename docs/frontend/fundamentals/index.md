@@ -4,9 +4,9 @@
 
 ## 导航
 
-- [HTML](/fe/fundamentals/html/)
-- [CSS](/fe/fundamentals/css/)
-- [JavaScript](/fe/fundamentals/js/)
+- [HTML](/frontend/fundamentals/html/)
+- [CSS](/frontend/fundamentals/css/)
+- [JavaScript](/frontend/fundamentals/js/)
 - TypeScript（待补）
 
 ## 建议学习顺序

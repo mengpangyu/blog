@@ -4,4 +4,4 @@
 
 ## 导航
 
-- [语言与基础](/fe/fundamentals/)
+- [语言与基础](/frontend/fundamentals/)
