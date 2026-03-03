@@ -6,7 +6,7 @@ const docsRoot = path.resolve(__dirname, '..')
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'Canned',
+  title: 'Can',
   base: '/blog/',
   description: '逆水行舟，不进则退',
   markdown: {
@@ -20,7 +20,7 @@ export default defineConfig({
     },
   },
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
+    logo: '/logo.png',
     nav: [
       { text: '前端', link: '/frontend/' },
       { text: 'AI', link: '/ai/' },
@@ -33,7 +33,7 @@ export default defineConfig({
       '/interview/': buildSectionSidebar({ docsRoot, section: 'interview', base: '/interview/' }),
     },
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/shangaowanren' }],
 
     lastUpdated: {
       text: '最后更新于',
@@ -41,6 +41,10 @@ export default defineConfig({
         dateStyle: 'full',
         timeStyle: 'medium',
       },
+    },
+
+    search: {
+      provider: 'local',
     },
   },
 })
