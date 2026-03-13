@@ -1,5 +1,6 @@
 ---
 title: Hello 排序
+order: 1
 ---
 
 # Hello 排序
