@@ -1,5 +1,6 @@
 ---
 title: Redux
+order: 6
 ---
 
 # Redux

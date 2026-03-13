@@ -1,5 +1,6 @@
 ---
 title: Ubuntu 18.04 常用软件
+order: 8
 ---
 
 # Ubuntu 18.04 常用软件

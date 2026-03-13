@@ -1,5 +1,6 @@
 ---
 title: Promise
+order: 3
 ---
 
 # Promise

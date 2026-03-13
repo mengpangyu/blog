@@ -1,3 +1,7 @@
+---
+order: 8
+---
+
 # Linux
 
 Linux 系统管理与 Shell 编程笔记。

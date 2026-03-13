@@ -1,5 +1,6 @@
 ---
 title: React 的函数组件
+order: 3
 ---
 
 # React 的函数组件

@@ -1,5 +1,6 @@
 ---
 title: Shell 详解
+order: 6
 ---
 
 # Shell 详解

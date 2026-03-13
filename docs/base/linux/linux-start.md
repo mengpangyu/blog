@@ -1,5 +1,6 @@
 ---
 title: Linux 系统的启动过程
+order: 1
 ---
 
 # Linux 系统的启动过程

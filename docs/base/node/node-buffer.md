@@ -1,5 +1,6 @@
 ---
 title: Node.js Buffer
+order: 1
 ---
 
 # Node.js Buffer

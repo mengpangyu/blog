@@ -1,5 +1,6 @@
 ---
 title: TypeScript 初体验
+order: 1
 ---
 
 # TypeScript 初体验

@@ -1,5 +1,6 @@
 ---
 title: bash 命令详解
+order: 7
 ---
 
 # bash 命令详解

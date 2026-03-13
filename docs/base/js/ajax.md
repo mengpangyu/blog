@@ -1,5 +1,6 @@
 ---
 title: ajax
+order: 2
 ---
 
 # ajax

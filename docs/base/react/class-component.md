@@ -1,5 +1,6 @@
 ---
 title: React 的 class 组件
+order: 2
 ---
 
 # React 的 class 组件

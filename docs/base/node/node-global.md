@@ -1,5 +1,6 @@
 ---
 title: Node.js 全局对象
+order: 5
 ---
 
 # Node.js 全局对象

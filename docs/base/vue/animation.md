@@ -1,5 +1,6 @@
 ---
 title: 深入 Vue 动画原理
+order: 2
 ---
 
 # 深入 Vue 动画原理

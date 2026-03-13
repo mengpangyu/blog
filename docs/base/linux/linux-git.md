@@ -1,5 +1,6 @@
 ---
 title: git 配置
+order: 9
 ---
 
 # git 配置

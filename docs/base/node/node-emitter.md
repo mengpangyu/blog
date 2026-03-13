@@ -1,5 +1,6 @@
 ---
 title: Node.js EventEmitter
+order: 4
 ---
 
 # Node.js EventEmitter
