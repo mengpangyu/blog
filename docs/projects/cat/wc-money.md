@@ -1,5 +1,6 @@
 ---
 title: money
+order: 1
 ---
 
 # money

@@ -1,5 +1,6 @@
 ---
 title: My Slide
+order: 1
 ---
 
 # My Slide

@@ -1,5 +1,6 @@
 ---
 title: statistic
+order: 2
 ---
 
 # statistic

@@ -1,5 +1,6 @@
 ---
 title: Point UI 介绍
+order: 1
 ---
 
 # Point UI 介绍
