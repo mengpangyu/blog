@@ -1,5 +1,6 @@
 ---
 title: Vue 技巧
+order: 3
 ---
 
 # Vue 技巧

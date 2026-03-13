@@ -1,5 +1,6 @@
 ---
 title: TypeScript 技巧
+order: 10
 ---
 
 # TypeScript 技巧

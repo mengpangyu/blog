@@ -1,5 +1,6 @@
 ---
 title: DOM 技巧
+order: 5
 ---
 
 # DOM 技巧

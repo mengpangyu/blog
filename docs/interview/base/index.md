@@ -1,3 +1,7 @@
+---
+order: 1
+---
+
 # 基础
 
 - [JavaScript](/interview/base/js)

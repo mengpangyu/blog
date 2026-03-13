@@ -1,5 +1,6 @@
 ---
 title: JavaScript 技巧
+order: 2
 ---
 
 # JavaScript 技巧
