@@ -20,14 +20,20 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.png',
     nav: [
-      { text: '前端', link: '/frontend/' },
+      { text: '基础', link: '/base/' },
+      { text: '算法', link: '/algorithm/' },
       { text: 'AI', link: '/ai/' },
       { text: '面经', link: '/interview/' },
+      { text: '项目', link: '/projects/' },
+      { text: '工具', link: '/tools/' },
     ],
     sidebar: {
-      '/frontend/': buildSectionSidebar({ docsRoot, section: 'frontend', base: '/frontend/' }),
+      '/base/': buildSectionSidebar({ docsRoot, section: 'base', base: '/base/' }),
+      '/algorithm/': buildSectionSidebar({ docsRoot, section: 'algorithm', base: '/algorithm/' }),
       '/ai/': buildSectionSidebar({ docsRoot, section: 'ai', base: '/ai/' }),
       '/interview/': buildSectionSidebar({ docsRoot, section: 'interview', base: '/interview/' }),
+      '/projects/': buildSectionSidebar({ docsRoot, section: 'projects', base: '/projects/' }),
+      '/tools/': buildSectionSidebar({ docsRoot, section: 'tools', base: '/tools/' }),
     },
     socialLinks: [{ icon: 'github', link: 'https://github.com/shangaowanren' }],
     lastUpdated: {

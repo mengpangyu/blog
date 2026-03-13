@@ -8,17 +8,23 @@ hero:
   tagline: 技术、思考与创作分享
   actions:
     - theme: brand
-      text: 前端学习
-      link: /fe/
+      text: 基础知识
+      link: /base/
     - theme: alt
       text: 面经目录
       link: /interview/base/js
 
 features:
-  - title: 技术笔记
-    details: 记录前端开发、算法、工程化等技术内容的学习与实践体会
-  - title: 创意与随想
-    details: 分享生活灵感、设计想法及个人成长过程中的所思所感
-  - title: 开源应用实验
-    details: 各类可运行的小项目，助力理解和验证知识点
+  - title: 基础
+    details: HTML / CSS / JS / TS / React / Vue / Node.js / Linux
+    link: /base/
+  - title: 算法与数据结构
+    details: 排序算法、数组、链表、树、图、哈希表等经典数据结构
+    link: /algorithm/
+  - title: 面经
+    details: 面试导向的知识点速查与技巧总结
+    link: /interview/
+  - title: 项目
+    details: 个人项目开发笔记与复盘
+    link: /projects/
 ---
