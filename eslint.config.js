@@ -15,6 +15,9 @@ export default [
 
       // Vue language-tools virtual output (can appear as *.vue.js in some setups)
       'apps/vue/**/*.vue.*',
+
+      // Legacy demo scripts from notes migration (learning code, not production)
+      'apps/js/**',
     ],
   },
 
