@@ -58,7 +58,7 @@ const emitter = new event.EventEmitter()
 emitter.emit('error')
 ```
 
-![error](./image/node-emitter-1.png)
+![error](./images/node-emitter-1.png)
 
 ## EventEmitter 继承
 

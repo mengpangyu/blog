@@ -23,7 +23,7 @@ JavaScript 中的全局对象是 window，而 Node.js 中的全局对象是 glob
 console.log(__filename)
 ```
 
-![文件路径](./image/node-global-1.png)
+![文件路径](./images/node-global-1.png)
 
 ## \_\_dirname
 
@@ -35,7 +35,7 @@ console.log(__filename)
 console.log(__dirname)
 ```
 
-![目录路径](./image/node-global-2.png)
+![目录路径](./images/node-global-2.png)
 
 ## setTimeout(cb, ms)
 
@@ -48,7 +48,7 @@ setTimeout(() => {
 console.log('我是立即执行的hello')
 ```
 
-![计时器](./image/node-global-3.png)
+![计时器](./images/node-global-3.png)
 
 ## console
 

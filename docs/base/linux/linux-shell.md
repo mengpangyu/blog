@@ -49,7 +49,7 @@ chmod +x test.sh
 ./test.sh
 ```
 
-![shell可执行程序](./image/linux-shell-1.png)
+![shell可执行程序](./images/linux-shell-1.png)
 
 2. 作为解释器参数
 
@@ -57,7 +57,7 @@ chmod +x test.sh
 sh test.sh
 ```
 
-![shell可执行程序](./image/linux-shell-2.png)
+![shell可执行程序](./images/linux-shell-2.png)
 
 ## Shell 变量
 

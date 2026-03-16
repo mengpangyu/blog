@@ -9,11 +9,11 @@ order: 9
 
 图是由边的集合和顶点的集合组成, 如果一个图的顶点是有序的, 则称之为有向图, 有向图表明了图的流向, 与流程图类似
 
-![图](./image/chart01.png)
+![图](./images/chart01.png)
 
 **有向图**
 
-![图](./image/chart02.png)
+![图](./images/chart02.png)
 
 **无向图**
 

@@ -16,7 +16,7 @@ order: 1
 - Echarts
 - Ant Design of React
 
-![项目预览](./image/clock-1.png)
+![项目预览](./images/clock-1.png)
 
 预览链接: [https://chaunceym.gitee.io/clock/](https://chaunceym.gitee.io/clock/)
 

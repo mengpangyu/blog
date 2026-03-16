@@ -7,7 +7,7 @@ order: 1
 
 这是我基于 Vue 实现的一个 UI 框架, 组件虽然不多, 但是对于功能很友好
 
-![首页预览](./image/pointui-1.png)
+![首页预览](./images/pointui-1.png)
 
 预览链接: [https://chaunceym.gitee.io/pointui/](https://chaunceym.gitee.io/pointui/)
 

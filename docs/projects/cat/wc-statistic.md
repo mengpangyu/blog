@@ -7,7 +7,7 @@ order: 2
 
 ## 本页预览图片
 
-![统计页面预览](./image/wc-statistic-1.png)
+![统计页面预览](./images/wc-statistic-1.png)
 
 ## 功能板块
 

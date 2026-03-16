@@ -171,7 +171,7 @@ updateChildren: function (nextNestedChildrenElements,transaction,context) {
 
 那如果出现了跨层级的操作, diff 会怎样表现
 
-![跨层级移动dom节点](./image/react-question01.png)
+![跨层级移动dom节点](./images/react-question01.png)
 
 我们让上图的 a 节点包括其子节点移动到 d 节点下, React 会怎样操作
 
@@ -191,7 +191,7 @@ React 是基于组件构建应用的, 对于组件间的比较所采取的策略
 - 对于同一类型组件, 有可能 Virtual DOM 没有任何变化, 如果确切知道这点可以节省大量的 diff 运算时间, 因此 React 允许
   用户通过 shouldComponentUpdate 来判断该组件是否需要 diff
 
-![component diff](./image/react-question02.png)
+![component diff](./images/react-question02.png)
 
 当 e 组件变成 h 时, React 就不会比较这两个组件结构, 直接进行删除组件 e, 重写创建 h 及子组件, 虽然两个组件时不同类型结构类似,
 dif 算法会影响性能, 正如博客所言
@@ -246,7 +246,7 @@ function makeRemove(child, node) {
 
 举个例子加深印象
 
-![element diff](./image/react-questions03.png)
+![element diff](./images/react-questions03.png)
 
 旧集合 a,b,c,d 四个节点, 更新后新集合为 b,a,c,d 节点, 依次对比, 依次删除在创建
 

@@ -99,7 +99,7 @@ a.x = a = {}
 // a.x = undefined
 ```
 
-![代码解析](./image/open-questions-1.png)
+![代码解析](./images/open-questions-1.png)
 
 ### (a ==1 && a== 2 && a==3) 可能为 true 吗？
 
@@ -149,7 +149,7 @@ let user = {
 }
 ```
 
-![单个对象引用](./image/open-questions-3.png)
+![单个对象引用](./images/open-questions-3.png)
 
 当把 user 重写
 
@@ -157,7 +157,7 @@ let user = {
 user = null
 ```
 
-![单个对象引用改变](./image/open-questions-4.png)
+![单个对象引用改变](./images/open-questions-4.png)
 
 #### 两个变量引用一个对象
 
@@ -169,7 +169,7 @@ let user = {
 let admin = user
 ```
 
-![多个对象引用](./image/open-questions-5.png)
+![多个对象引用](./images/open-questions-5.png)
 
 当把 user 重写
 
@@ -202,7 +202,7 @@ let family = marry(
 )
 ```
 
-![引用环](./image/open-questions-6.png)
+![引用环](./images/open-questions-6.png)
 
 去除两个引用
 
@@ -211,11 +211,11 @@ delete family.father
 delete family.mother.husband
 ```
 
-![引用环去除](./image/open-questions-7.png)
+![引用环去除](./images/open-questions-7.png)
 
 你会看到 family 和 mother 都消除了对 father 的引用, 所以
 
-![垃圾回收father](./image/open-questions-8.png)
+![垃圾回收father](./images/open-questions-8.png)
 
 ### 引用环的孤岛
 
@@ -225,7 +225,7 @@ delete family.mother.husband
 family = null
 ```
 
-![引用环的孤岛](./image/open-questions-9.png)
+![引用环的孤岛](./images/open-questions-9.png)
 
 可以看到, 虽然孤岛里的都有相互引用, 但是与他们连接的 family 断开了连接, 所以这个引用孤岛也要被垃圾回收
 
@@ -244,7 +244,7 @@ family = null
 
 全局作用域开始把所有用到的对象都标记一下, 一直标记到没有被引用的变量王为止
 
-![标记清除算法](./image/open-questions-2.png)
+![标记清除算法](./images/open-questions-2.png)
 
 - 缺点: 时间太长, 每一个都要标记遍历
 
@@ -290,11 +290,11 @@ div = null
 4. check: 主要存 setImmediate API
 5. close callback **nextTick 当前阶段马上执行**
 
-![EventLoop](./image/open-questions-10.png)
+![EventLoop](./images/open-questions-10.png)
 
 举例一个面试题
 
-![EventLoop Example](./image/open-questions-11.png)
+![EventLoop Example](./images/open-questions-11.png)
 
 > 宏任务 和 微任务
 
@@ -324,7 +324,7 @@ EventLoop 是一个阶段, 分为 Node.js 和 Chrome
   1. 宏(一会)
   2. 微(马上)
 
-![总结](./image/open-questions-12.png)
+![总结](./images/open-questions-12.png)
 
 ## 个性化题目
 

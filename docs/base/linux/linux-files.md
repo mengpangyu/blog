@@ -7,7 +7,7 @@ order: 2
 
 所有的 linux 系统的目录结构都差不多，他们都继承于一个根系统，就拿我现在用的 Ubuntu 来演示
 
-![系统目录结构](./image/linux-files-1.png)
+![系统目录结构](./images/linux-files-1.png)
 
 - **/bin:** bin是Binary的缩写, 这个目录存放着最经常使用的命令
 

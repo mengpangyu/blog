@@ -76,7 +76,7 @@ function insert(newElement, item) {
 
 这里的逻辑有点抽象, 就是把当前节点的 next 赋值给新插入的节点的 next, 然后把当前节点在赋值给当前节点的 next, 这样就算是插入了一个新节点
 
-![节点插入](./image/linked01.png)
+![节点插入](./images/linked01.png)
 
 定义展示链表方法
 
@@ -129,7 +129,7 @@ function remove(item) {
 }
 ```
 
-![删除节点](./image/linked02.png)
+![删除节点](./images/linked02.png)
 
 ## 双向链表
 

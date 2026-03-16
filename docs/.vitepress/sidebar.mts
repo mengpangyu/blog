@@ -60,7 +60,14 @@ function titleFromFile(filePath: string): { title?: string; order?: number } {
         const mOrder = line.match(/^order:\s*(\d+)\s*$/)
         if (mOrder?.[1]) order = Number(mOrder[1])
       }
-      if (title || order !== undefined) return { title, order }
+      // if frontmatter provided a title, we're done
+      if (title) return { title, order }
+
+      // order-only frontmatter: fall through to H1 detection
+      if (order !== undefined) {
+        const h1 = raw.match(/^#\s+(.+)\s*$/m)
+        return { title: h1?.[1]?.trim(), order }
+      }
     }
   }
 

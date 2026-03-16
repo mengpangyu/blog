@@ -13,7 +13,7 @@ Linux系统对不同的用户访问同一文件（包括目录文件）的权限
 
 在Linux中我们可以使用ll或者ls –l命令来显示一个文件的属性以及文件所属的用户和组
 
-![文件权限](./image/linux-files-attr-1.png)
+![文件权限](./images/linux-files-attr-1.png)
 
 > 上图显示的权限的第一个字母 `d` 表示目录，当然还有好几种类型
 
@@ -25,7 +25,7 @@ Linux系统对不同的用户访问同一文件（包括目录文件）的权限
 
 > 接下来的 rwx 代表分别是： **[ r ]代表可读(read)、[ w ]代表可写(write)、[ x ]代表可执行(execute)**
 
-![文件权限](./image/linux-files-attr-2.png)
+![文件权限](./images/linux-files-attr-2.png)
 
 第4-6位确定属组（所有者的同组用户）拥有该文件的权限，第7-9位确定其他用户拥有该文件的权限
 

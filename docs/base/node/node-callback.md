@@ -20,7 +20,7 @@ console.log(data.toString())
 console.log('读取文件完毕')
 ```
 
-![sync](./image/node-callback-1.png)
+![sync](./images/node-callback-1.png)
 
 ## 非阻塞代码例子
 
@@ -34,7 +34,7 @@ fs.readFile('input.txt', (err, data) => {
 console.log('读取文件完毕')
 ```
 
-![async](./image/node-callback-2.png)
+![async](./images/node-callback-2.png)
 
 :::tip 注意
 阻塞是按顺序执行的，而非阻塞是不需要按顺序的，所以如果需要处理回调函数的参数，我们就需要写在回调函数内

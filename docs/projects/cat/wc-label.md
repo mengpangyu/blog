@@ -7,19 +7,19 @@ order: 3
 
 ## 本页面图片预览
 
-![标签管理预览](./image/wc-label-1.png)
+![标签管理预览](./images/wc-label-1.png)
 
 ## 功能板块
 
 ### 添加标签
 
-![添加标签预览](./image/wc-label-2.png)
+![添加标签预览](./images/wc-label-2.png)
 
 把所有的 svg 用 v-for 渲染到页面, 添加判断各种条件
 
 ### 修改/删除标签
 
-![修改标签预览](./image/wc-label-3.png)
+![修改标签预览](./images/wc-label-3.png)
 
 input 事件来监听修改, $el.remove 来删除元素
 

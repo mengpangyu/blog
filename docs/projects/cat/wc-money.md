@@ -9,13 +9,13 @@ order: 1
 
 预览链接: 手机扫码体验更佳
 
-![小猫记账预览](./image/moneyio.png)
+![小猫记账预览](./images/moneyio.png)
 
 源码链接: [https://gitee.com/chaunceym/moneyio](https://gitee.com/chaunceym/moneyio)
 
 ## 本页面预览图片
 
-![记账页面预览](./image/wc-money.png)
+![记账页面预览](./images/wc-money.png)
 
 ## 功能板块
 

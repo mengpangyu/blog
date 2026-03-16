@@ -173,11 +173,11 @@ DOM结构如下：
 
 createElement 在逻辑层面的任务流转
 
-![](./image/jsx_2026-03-03-15-48-14.png)
+![](./images/jsx_2026-03-03-15-48-14.png)
 
 createElement 像是开发者和 ReactElement 之间调用了一层“转换器”，一个数据处理层，可以从开发者处接受相对简单的参数，将这些参数按照 ReactElement 的预期做一层格式化，最终通过调用 ReactElement 来实现元素的创建，整个过程如图所示
 
-![](./image/jsx_2026-03-03-15-50-44.png)
+![](./images/jsx_2026-03-03-15-50-44.png)
 
 createElement 只是“参数中介”
 
@@ -209,11 +209,11 @@ const ReactElement = function (type, key, ref, self, source, owner, props) {
 
 ReactElement 把传入的参数按照一定的规范，“组装”进了 element 对象中，并返回给了 React.createElement，最终交回开发者手中，过程如下：
 
-![](./image/jsx_2026-03-03-15-53-30.png)
+![](./images/jsx_2026-03-03-15-53-30.png)
 
 可以在控制台中输出组件的 JS，是一个标准的 ReactElement 对象实例
 
-![](./image/jsx_2026-03-03-15-54-40.png)
+![](./images/jsx_2026-03-03-15-54-40.png)
 
 这个实例本质是**JS 对象形式存在的对 DOM 的描述**，也就是“虚拟 DOM”中的一个节点
 
@@ -230,4 +230,4 @@ ReactDOM.render(
 )
 ```
 
-**ReactDOM.render** 方法接收 3 个参数，其中\*\*第二个
+**ReactDOM.render** 方法接收 3 个参数，其中第二个
