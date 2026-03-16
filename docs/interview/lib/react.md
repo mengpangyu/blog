@@ -139,3 +139,190 @@ export default {
 
 - 使用 createElement 函数对 key 和 ref 等特殊 props 进行处理，并获取 defaultProps 的默认 props 进行赋值，并且对传入的孩子节点进行处理，最终构造成一个虚拟 DOM 对象
 - ReactDOM.render 将生成好的虚拟 DOM 渲染到指定容器上，其中采用了批处理、事务机制并且针对特定浏览器进行了性能优化，最终转换为真实 DOM
+
+## 怎么判断 React 组件是函数组件还是类组件？
+
+可以使用 JS 的 typeof 运算符和 React 的 Component 来判断
+
+```tsx
+function isClassComponent(component) {
+  return (
+    // 判断类型为函数且有isReactComponent属性
+    typeof component === 'function' && !!component.prototype.isReactComponent
+  )
+}
+
+// 示例用法
+const MyComponent = () => <div>Hello, I'm a function component!</div>
+const MyClassComponent = class extends React.Component {
+  render() {
+    return <div>Hello, I'm a class component!</div>
+  }
+}
+
+console.log(isClassComponent(MyComponent)) // false
+console.log(isClassComponent(MyClassComponent)) // true
+```
+
+## 怎么判断一个对象是否为 React 元素？
+
+使用 React.isValidElement 方法进行判断
+
+```tsx
+import React from 'react'
+
+const MyComponent = () => {
+  return <div>Hello, world!</div>
+}
+
+const elem = <MyComponent />
+
+console.log(React.isValidElement(elem)) // true
+console.log(React.isValidElement({})) // false
+```
+
+:::warning
+该方法只能判断是否为 React 元素，不能判断元素类型和其他属性，如想获取元素的类型或其他属性，可以直接访问元素的属性，例如 type、props、key 等
+:::
+
+## React 组件通信
+
+- 父传子：props
+
+```tsx
+function EmailInput(props) {
+  return (
+    <label>
+      Email: <input value={props.email} />
+    </label>
+  )
+}
+
+const element = <EmailInput email="123124132@163.com" />
+```
+
+- 子传父：回调函数
+
+```tsx
+// 父
+class Parents extends Component {
+  constructor() {
+    super()
+    this.state = {
+      price: 0,
+    }
+  }
+
+  getItemPrice(e) {
+    this.setState({
+      price: e,
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        <div>price: {this.state.price}</div>
+        {/* 向子组件中传入一个函数  */}
+        <Child getPrice={this.getItemPrice.bind(this)} />
+      </div>
+    )
+  }
+}
+// 子
+class Child extends Component {
+  clickGoods(e) {
+    // 在此函数中传入值
+    this.props.getPrice(e)
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.clickGoods.bind(this, 100)}>goods1</button>
+        <button onClick={this.clickGoods.bind(this, 1000)}>goods2</button>
+      </div>
+    )
+  }
+}
+```
+
+- 兄弟：父组件传递
+
+```tsx
+class Parent extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { count: 0 }
+  }
+  setCount = () => {
+    this.setState({ count: this.state.count + 1 })
+  }
+  render() {
+    return (
+      <div>
+        <SiblingA count={this.state.count} />
+        <SiblingB onClick={this.setCount} />
+      </div>
+    )
+  }
+}
+```
+
+- 爷孙：context
+
+```tsx
+// 生成
+const PriceContext = React.createContext('price')
+// 注入
+<PriceContext.Provider value={100}>
+</PriceContext.Provider>
+// 消费
+<PriceContext.Consumer>
+    { /*这里是一个函数*/ }
+    {
+        price => <div>price：{price}</div>
+    }
+</PriceContext.Consumer>
+```
+
+- 非关系组件传递：redux
+
+## setState 是同步还是异步？
+
+### react 18 之前
+
+- 在 promise 的状态更新、JS 原生事件、setTimeout、setInterval 中是同步的
+- 在合成事件中是异步的
+
+### react 18 之后
+
+都为异步，[官方详细说明](https://github.com/reactwg/react-18/discussions/21)
+
+TODO: 为什么 18 之后变为全部异步执行
+
+:::warning
+setState 的异步并不是内部由异步代码实现，其实本身执行过程和代码都是同步的，只是合成事件和钩子函数的调用顺序在更新之前，导致在合成事件和钩子函数中没法立马拿到更新后的值，形成了所谓“异步”
+:::
+
+## 在 shouldComponentUpdate 或 componentWillUpdate 中使用 setState 会发生什么？
+
+当调用 setState 的时候，实际上会将新的 state 合并到状态更新队列中，并对 partialState 以及 \_pendingStateQueue 更新队列进行合并操作。最终通过 enqueueUpdate 执行 state 更新。
+
+如果在 shouldComponentUpdate 或 componentWillUpdate 中使用 setState，会使得 state 队列（\_pendingStateQueue）不为 null，从而调用 updateComponent 方法，updateComponent 中会继续调用 shouldComponentUpdate 和 componentWillUpdate，因此造成死循环。
+
+## setState 之后发生了什么
+
+### 简单版本
+
+React 利用状态队列机制实现了 setState 的异步更，避免频繁的重复更新 state，首先将新 state 合并到状态更新队列中，然后根据更新队列和 shouldComponentUpdate 状态来判断是否需要更新组件
+
+### 复杂版本
+
+- enqueueSetState 将 state 放入队列中，并调用 enqueueUpdate 处理要更新的 Component
+- 如果组件当前正在处于 update 事务中，则先将 Component 存入 dirtyComponent 中，否则调用 batchedUpdates 处理
+- batchedUpdates 发起一次 transaction.perform 事务
+- 开始执行事务初始化、运行、结束几个阶段
+  - 初始化：事务初始化阶段没有注册方法，估无方法要执行
+  - 运行：执行 setState 时传入的 callback 方法
+  - 结束：更新 isBatchingUpdates 为 false，并执行 FLUSH_BATCHED_UPDATES 这个 wrapper 中的close方法，FLUSH_BATCHED_UPDATES在close阶段，会循环遍历所有的 dirtyComponents，调用updateComponent 刷新组件，并执行它的 pendingCallbacks, 也就是 setState 中设置的 callback
