@@ -592,3 +592,9 @@ useEffect(() => {
 ### 总结
 
 闭包陷阱的根因是 **effect 的重建次数少于组件渲染次数**，导致 effect 内部停留在旧的闭包环境中。核心解决思路是：要么让 effect 跟随依赖变化重建，要么绕过闭包直接获取最新值（函数式更新、useRef、useEffectEvent）。
+
+## useState 中传入函数会怎么处理？
+
+React 内部会直接调用函数，获取返回值存在 state 中，在 re-render 中不会再次触发函数
+
+[useState](https://react.dev/reference/react/useState)
