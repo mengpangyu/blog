@@ -5,9 +5,11 @@ import path from 'node:path'
 const docsRoot = path.resolve(__dirname, '..')
 
 // https://vitepress.dev/reference/site-config
+const base = process.env.VITE_BASE ?? '/blog/'
+
 export default defineConfig({
   title: '老登',
-  base: '/blog/',
+  base,
   description: '山高万仞，只登一步',
   appearance: 'dark',
   markdown: {
